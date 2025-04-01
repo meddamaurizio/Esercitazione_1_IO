@@ -4,7 +4,7 @@
 
 using namespace std;
 
-double remap(int& a) {
+double remap(double& a) {
     a = (3 * a / 4) - 1.75;
     return a;
 }
@@ -32,7 +32,7 @@ int main()
     while(dataFile >> val)
     {
         // val = 3 * val/4 - 1.75;
-        sumVal += val;
+        sumVal += remap(val);
         mean = sumVal/++nVal;
         fout << nVal << " " 
               << mean << endl;
